@@ -1,10 +1,11 @@
 #home {
   position: relative;
-  background: url(../../assets/bgIMG.png);
+  background: url("../../assets/bgIMG.png");
   background-size: cover;
-  background-repeat: repeat;
   background-position: center;
+  background-repeat: repeat;
 
+  // disable the default padding styles
   .app__wrapper {
     padding: 0;
 
@@ -16,11 +17,11 @@
 
 .app__header {
   flex: 1;
-  width: 80%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   flex-direction: row;
 
-  padding: 6rem 2rem 0;
+  padding: 6rem 2rem 0rem;
 
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
@@ -31,7 +32,7 @@
   }
 
   @media screen and (max-width: 450px) {
-    padding-top: 6rem 1rem 2rem;
+    padding: 6rem 1rem 2rem;
   }
 }
 
@@ -43,7 +44,9 @@
   align-items: flex-start;
   height: 100%;
 
-  @media screen and (max-width: 2000px) {
+  margin: 0 2rem;
+
+  @media screen and (max-width: 1200px) {
     width: 100%;
     margin-right: 0rem;
   }
@@ -59,12 +62,12 @@
   .badge-cmp,
   .tag-cmp {
     padding: 1rem 2rem;
-    border: var(--white-color);
+    background: var(--white-color);
     border-radius: 15px;
     flex-direction: row;
     width: auto;
 
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   }
 
   .tag-cmp {
@@ -100,20 +103,22 @@
   align-items: flex-start;
   height: 100%;
   margin-left: 1rem;
+
   div {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 
     background: var(--white-color);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 
     img {
       width: 60%;
       height: 60%;
-      cursor: pointer;
     }
   }
+
+  // circles with different height & width
 
   div:nth-child(1) {
     width: 100px;
@@ -132,17 +137,17 @@
   }
 
   @media screen and (min-width: 2000px) {
-    div:nth-child(1) {
+    div:nth-child(2) {
       width: 400px;
       height: 400px;
     }
 
-    div:nth-child(2) {
+    div:nth-child(3) {
       width: 170px;
       height: 170px;
     }
 
-    div:nth-child(3) {
+    div:nth-child(1) {
       width: 200px;
       height: 200px;
     }

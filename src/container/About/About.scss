@@ -22,11 +22,9 @@
 
   img {
     width: 100%;
-    border-radius: 20px;
     height: 170px;
+    border-radius: 15px;
     object-fit: cover;
-    cursor: pointer;
-    box-shadow: 15px 0 20px rgba(0, 0, 0, 0.2);
   }
 
   @media screen and (min-width: 2000px) {
