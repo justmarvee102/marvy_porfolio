@@ -43,7 +43,9 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">
+        <span>Grab </span> a Coffee and Let's <span> Chat☕ </span>
+      </h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
@@ -90,14 +92,16 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button
-            type="button"
-            className="p-text"
-            onClick={handleSubmit}
-            href="mailto:emmanuelmarvelous579@gmail.com"
-          >
-            {!loading ? 'Send Message' : 'Sending...'}
-          </button>
+          <a target="blank" href="emmanuelmarvelous579@gmail.com">
+            <button
+              type="button"
+              className="p-text"
+              onClick={handleSubmit}
+              href="mailto:emmanuelmarvelous579@gmail.com"
+            >
+              {!loading ? 'Send Message' : 'Sending...'}
+            </button>
+          </a>
         </div>
       ) : (
         <div>
