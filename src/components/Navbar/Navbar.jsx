@@ -57,12 +57,27 @@ const Navbar = () => {
 
       {/* Define your routes here */}
       <Routes>
-        <Route path="http://localhost:3001//home" element={<Header />} />
-        <Route path="http://localhost:3001//about" element={<About />} />
-        <Route path="http://localhost:3001//work" element={<Work />} />
-        <Route path="http://localhost:3001//skills" element={<Skills />} />
+        <Route
+          path="https://my-porfolio-nine.vercel.app//home"
+          element={<Header />}
+        />
+        <Route
+          path="https://my-porfolio-nine.vercel.app//about"
+          element={<About />}
+        />
+        <Route
+          path="https://my-porfolio-nine.vercel.app//work"
+          element={<Work />}
+        />
+        <Route
+          path="https://my-porfolio-nine.vercel.app//skills"
+          element={<Skills />}
+        />
         <Route path="https://archive-phi-six.vercel.app//archive" />
-        <Route path="http://localhost:3001//contact" element={<Footer />} />
+        <Route
+          path="https://my-porfolio-nine.vercel.app//contact"
+          element={<Footer />}
+        />
       </Routes>
     </Router>
   );
