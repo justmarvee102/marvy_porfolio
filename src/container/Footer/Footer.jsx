@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import client from '../../client';
-
 import './Footer.scss';
 
 const Footer = () => {
@@ -43,21 +42,19 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">
-        <span>Grab </span> a Coffee and Let's <span> Chat☕ </span>
-      </h2>
+      <h2 className="head-text">Take a coffee & chat with me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
-          <a href="mailto:emmanuelmarvelous579@gmail.com" className="p-text">
-            emmanuelmarvelous579@gmail.com
+          <a href="mailto:hello@micael.com" className="p-text">
+            hello@micael.com
           </a>
         </div>
         <div className="app__footer-card">
           <img src={images.mobile} alt="phone" />
-          <a href="tel:07058032427" className="p-text">
-            07058032427
+          <a href="tel:+1 (123) 456-7890" className="p-text">
+            +1 (123) 456-7890
           </a>
         </div>
       </div>
@@ -92,16 +89,9 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <a target="blank" href="emmanuelmarvelous579@gmail.com">
-            <button
-              type="button"
-              className="p-text"
-              onClick={handleSubmit}
-              href="mailto:emmanuelmarvelous579@gmail.com"
-            >
-              {!loading ? 'Send Message' : 'Sending...'}
-            </button>
-          </a>
+          <button type="button" className="p-text" onClick={handleSubmit}>
+            {!loading ? 'Send Message' : 'Sending...'}
+          </button>
         </div>
       ) : (
         <div>

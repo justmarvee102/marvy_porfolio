@@ -1,6 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  z-index: 9999;
+  transition: width 0.2s ease-out;
+}
+
 .app {
   background-color: var(--primary-color);
   font-family: var(--font-base);
+  overflow: hidden;
 }
 
 .app__whitebg {
@@ -53,7 +68,28 @@
 
 .head-text {
   font-size: 2.75rem;
-  font-weight: 600;
+  font-weight: 800;
+  text-align: center;
+  color: var(--black-color);
+  text-transform: capitalize;
+
+  span {
+    color: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 450px) {
+    font-size: 2rem;
+  }
+}
+
+.head-txt {
+  font-size: 2.75rem;
+  font-weight: 800;
+  padding: 40px;
   text-align: center;
   color: var(--black-color);
   text-transform: capitalize;
@@ -81,6 +117,7 @@
     font-size: 1.75rem;
   }
 }
+
 
 .bold-text {
   font-size: 1rem;
