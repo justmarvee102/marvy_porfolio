@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-<<<<<<< HEAD
 import { AppWrap, MotionWrap } from '../../wrapper';
 import Modal from 'react-modal';
 import { Tooltip } from 'react-tooltip';
 import { Typewriter } from 'react-simple-typewriter'; // Import Typewriter
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,25 +23,10 @@ const About = () => {
 
     client.fetch(query).then((data) => {
       console.log('Fetched data:', data);
-=======
-
-import { AppWrap, MotionWrap } from '../../wrapper';
-import './About.scss';
-import client from '../../client';
-import { urlFor } from '../../client';
-const About = () => {
-  const [abouts, setAbouts] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "abouts"]';
-
-    client.fetch(query).then((data) => {
->>>>>>> 99fe3344942f712aa55ed7b9a338f8ba7e2dd03a
       setAbouts(data);
     });
   }, []);
 
-<<<<<<< HEAD
   const handleImageClick = (imgUrl) => {
     setSelectedImage(imgUrl);
   };
@@ -57,8 +40,8 @@ const About = () => {
       {/* Implementing the typewriter effect */}
       <h1>
         <Typewriter
-          words={["I'm A Creative.", "I'm A Designer.", "I'm A Developer."]}
-          loop={Infinity}
+          words={["I'm A Designer", "I'm A Developer"]}
+          loop={5}
           cursor
           cursorStyle="_"
           typeSpeed={70}
@@ -160,35 +143,6 @@ const About = () => {
         />
       </Modal>
     </div>
-=======
-  return (
-    <>
-      <h2 className="head-text">
-        Design is 🚀 <span>My Craft. </span> <br />
-        Passion <span>is My Fuel.</span>
-      </h2>
-
-      <div className="app__profiles">
-        {abouts.map((about, index) => (
-          <motion.div
-            whileInView={{ opacity: 1 }}
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5, type: 'tween' }}
-            className="app__profile-item"
-            key={about.title + index}
-          >
-            <img src={urlFor(about.imgUrl)} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>
-              {about.title}
-            </h2>
-            <p className="p-text" style={{ marginTop: 10 }}>
-              {about.description}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </>
->>>>>>> 99fe3344942f712aa55ed7b9a338f8ba7e2dd03a
   );
 };
 
