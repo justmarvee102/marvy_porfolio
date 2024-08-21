@@ -1,0 +1,197 @@
+/* Keyframes for the animated gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.app__testimonial {
+  perspective: 560px; /* Perspective for 3D effect */
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.app__testimonial-item {
+  position: relative;
+  width: 60%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  border: 1px solid rgb(181, 150, 255);
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+
+  transform-style: preserve-3d; /* Ensures 3D transformation of children */
+  transition: transform 0.15s ease-in-out; /* Smooth transition */
+  overflow: hidden;
+
+  /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    hsla(0, 0%, 100%, 0.963),
+    #d1ccff,
+    #f9bcff
+  );
+
+  background-size: 800% 200%;
+  animation: gradientAnimation 15s ease infinite; /* Infinite gradient animation */
+
+  &:hover {
+    transform: rotateX(55deg) rotateY(360deg);
+    box-shadow: 0px 0px 30px rgba(178, 146, 225, 0.655); /* Reset on hover */
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 2000px) {
+    min-height: 450px;
+
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.app__testimonial-content {
+  flex: 1;
+  height: 100%;
+  padding: 0 2rem;
+  text-align: left;
+  position: relative;
+  z-index: 1; /* Ensures content is above background */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: var(--black-color);
+    font-family: var(--font-base);
+
+    @media screen and (min-width: 2000px) {
+      font-size: 2rem;
+      line-height: 3.5rem;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+  }
+
+  h5 {
+    font-weight: 400;
+    color: var(--gray-color);
+    margin-top: 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top: 2rem;
+    padding: 0;
+  }
+}
+
+.app__testimonial-btns {
+  flex-direction: row;
+  margin-top: 1rem;
+
+  div {
+    width: 50px;
+    border: 2px dotted rgb(171, 171, 255);
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    cursor: pointer;
+    margin: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      color: var(--secondary-color);
+    }
+
+    &:hover {
+      background-color: var(--secondary-color);
+      border: 0.4px double rgb(212, 147, 255);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 100px;
+      height: 100px;
+
+      svg {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+}
+
+.app__testimonial-brands {
+  width: 80%;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
+  div {
+    width: 150px;
+    margin: 1.5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+    }
+
+    @media screen and (min-width: 2000px) {
+      width: 210px;
+      margin: 2rem;
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 120px;
+      margin: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+}
