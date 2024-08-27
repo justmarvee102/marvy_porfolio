@@ -215,3 +215,25 @@
     max-height: 70vh; /* Ensures the image is half the screen's height on large screens */
   }
 }
+
+@keyframes glitterBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glitter-background {
+  background: linear-gradient(90deg, #6164ff, #745b95, #884bb0);
+  color: white;
+  background-size: 400% 400%;
+  animation: glitterBackground 3s ease infinite;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 1px;
+}

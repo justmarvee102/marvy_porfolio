@@ -3,24 +3,26 @@ import { motion } from 'framer-motion';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import Modal from 'react-modal';
 import { Tooltip } from 'react-tooltip';
-import { Typewriter } from 'react-simple-typewriter'; // Import Typewriter
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
+import { Typewriter } from 'react-simple-typewriter';
 import './About.scss';
 import client from '../../client';
 import { urlFor } from '../../client';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 Modal.setAppElement('#root');
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [backgroundColor, setBackgroundColor] = useState('#fff'); // Default background color
+
+  const colors = ['#FF6F61', '#6B5B95', '#88B04B']; // Array of background colors
 
   useEffect(() => {
     const query =
       '*[_type == "about"]{title, description, imgUrl, certificates}';
-
     client.fetch(query).then((data) => {
       console.log('Fetched data:', data);
       setAbouts(data);
@@ -35,19 +37,30 @@ const About = () => {
     setSelectedImage(null);
   };
 
+  const handleType = (index) => {
+    setBackgroundColor(colors[index % colors.length]); // Cycle through the colors
+  };
+
   return (
     <div className="about__header">
       {/* Implementing the typewriter effect */}
       <h1>
-        <Typewriter
-          words={["I'm A Designer", "I'm A Developer"]}
-          loop={5}
-          cursor
-          cursorStyle="_"
-          typeSpeed={70}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
+        I'm A{' '}
+        <span
+          className="glitter-background"
+          style={{ backgroundColor: backgroundColor, padding: '0 12px' }}
+        >
+          <Typewriter
+            words={['Designer', 'Creative', 'Developer']}
+            loop={Infinity}
+            cursor
+            cursorStyle="."
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onType={(index) => handleType(index)} // Handle color change on type
+          />
+        </span>
       </h1>
       <p>
         A small river named Duden flows by their place and supplies it with the

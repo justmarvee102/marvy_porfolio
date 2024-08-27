@@ -12,7 +12,7 @@ const AppWrap = (Component, idName, classNames) =>
           <div className="copyright">
             <p className="p-text"> @2024, All rights reserved</p>
             <p className="p-text">
-              Designed And Developed From Scratch By MARVY.
+              Designed And Developed By MARVY.
             </p>
           </div>
         </div>
