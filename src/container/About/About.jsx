@@ -63,8 +63,8 @@ const About = () => {
         </span>
       </h1>
       <p>
-        A small river named Duden flows by their place and supplies it with the
-        necessary regalia...
+        Fueled by creativity and a passion for design, I transform ideas into
+        visually captivating experiences that connect and inspire.
       </p>
 
       <div>

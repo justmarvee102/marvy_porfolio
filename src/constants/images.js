@@ -10,6 +10,7 @@ import graphql from '../assets/graphql.png';
 import html from '../assets/html.png';
 import image from '../assets/image.png';
 import javascript from '../assets/javascript.png';
+import spline from '../assets/spline.png';
 import mu5 from '../assets/mu5.png';
 import node from '../assets/node.png';
 import python from '../assets/python.png';
@@ -23,6 +24,7 @@ import about01 from '../assets/about01.png';
 import about02 from '../assets/about02.png';
 import about03 from '../assets/about03.png';
 import about04 from '../assets/about04.png';
+import background from '../assets/background.png';
 
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
@@ -49,10 +51,12 @@ export default {
   graphql,
   html,
   javascript,
+  spline,
   mu5,
   node,
   python,
   react,
+  background,
   redux,
   sass,
   typescript,
