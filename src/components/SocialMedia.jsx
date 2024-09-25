@@ -1,14 +1,13 @@
 import React from 'react';
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
+import { BsInstagram, Bs1Circle, Bs0CircleFill } from 'react-icons/bs';
 
 const SocialMedia = () => (
   <div className="app__social">
     <div>
-      <BsTwitter />
+      <Bs1Circle />
     </div>
     <div>
-      <FaFacebookF />
+      <Bs0CircleFill />
     </div>
     <div>
       <BsInstagram />
